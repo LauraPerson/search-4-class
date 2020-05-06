@@ -5,7 +5,7 @@
 <% current_user.bookings.each do |booking| %>
   <%= booking.course.title %>
   <%= booking.course.user.first_name booking.course.user.last_name %>
-  <%= booking.course.scheduled_date %>
+  <%= booking.course.schedule_date %>
   <%= link_to 'Destroy Booking', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 
@@ -13,7 +13,7 @@
 <% current_user.courses.each do |course| %>
   <%= course.title %>
   <%= course.description %>
-  <%= course.scheduled_date %>
+  <%= course.schedule_date %>
   <%= link_to 'Edit Course', edit_course_path(course) %>
   <%= link_to 'Destroy Course', course_path(course), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>

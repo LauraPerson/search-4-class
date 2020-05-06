@@ -5,7 +5,6 @@
     <h1>Edit the course</h1>
   <% end %>
   <%= simple_form_for @course do |f| %>
-    <%= f.errors.messages %>
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, class: "form-control" %>
