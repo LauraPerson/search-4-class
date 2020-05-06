@@ -1,7 +1,8 @@
-<%= @user.first_name @user.last_name %>
+<%= current_user.first_name %>
+<%= current_user.last_name %>
 
 <h3> Courses bokked by the user </h3>
-<% @user.bookings.each do |booking| %>
+<% current_user.bookings.each do |booking| %>
   <%= booking.course.title %>
   <%= booking.course.user.first_name booking.course.user.last_name %>
   <%= booking.course.scheduled_date %>
@@ -9,7 +10,7 @@
 <% end %>
 
 <h3> Courses created by the user </h3>
-<% @user.courses.each do |course| %>
+<% current_user.courses.each do |course| %>
   <%= course.title %>
   <%= course.description %>
   <%= course.scheduled_date %>
