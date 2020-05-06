@@ -5,6 +5,7 @@
   <%= course.description %>
   <%= course.price %>
   <%= course.duration %>
+  <%= link_to 'See Course', course_path(course) %>
 <% end %>
 
 <%= link_to 'New Course', new_course_path %>
