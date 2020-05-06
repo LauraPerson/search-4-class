@@ -26,7 +26,7 @@ class CoursesController < ApplicationController
     end
     def destroy
         @course.destroy
-        redirect_to courses_path
+        redirect_to user_path(current_user)
     end
 
     private
