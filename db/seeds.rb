@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+array_categories = ['Coding', 'Music', 'Cooking', 'Languages', 'Physical Activity', 'Arts']
+array_categories.each do |category|
+    cat = Category.create(name: category)
+    puts "Create #{cat.id} categories"
+end

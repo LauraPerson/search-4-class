@@ -1,11 +1,35 @@
-<%= simple_form_for(@course) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-    <%= f.label :schedule_date %>
-    <%= f.date_field :schedule_date %>
-    <%= f.label :duration %>
-    <%= f.number_field :duration %>
-    <%= f.submit %>
-<% end %>
+<div class="container mt-2 col-4 offset-4">
+  <% if action_name == "new" || action_name == "create" %>
+    <h1>Create a new course</h1>
+  <% else %> 
+    <h1>Edit the course</h1>
+  <% end %>
+  <%= simple_form_for @course do |f| %>
+    <%= f.errors.messages %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+      <%= f.association :category, label: "Category", class: "form_control" %>
+    <div class="form-group">
+      <%= f.label :Date %>
+      <%= f.date_field :schedule_date, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :duration %>
+      <%= f.number_field :duration, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :price %>
+      <%= f.number_field :price, class: "form-control" %>
+    </div>
+    <% if action_name == "new" || action_name == "create"%>
+      <%= f.submit "Add" %>
+    <% else %>
+      <%= f.submit "Edit" %>
+    <% end %>
+  <% end %>

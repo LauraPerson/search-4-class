@@ -11,8 +11,12 @@ class CoursesController < ApplicationController
     end
     def create
         @course = Course.new(params_course)
-        @course.save
-        redirect_to course_path(@course)
+        @course.user = current_user
+        if @course.save
+            redirect_to course_path(@course)
+        else
+            render :new
+        end 
     end
     def edit
     end
@@ -31,6 +35,6 @@ class CoursesController < ApplicationController
     end
 
     def params_course
-        params.require(:course).permit(:title, :price, :schedule_date, :description, :category, :duration)
+        params.require(:course).permit(:title, :price, :schedule_date, :description, :category_id, :duration)
     end
 end
