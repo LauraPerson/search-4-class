@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+    before_action :authenticate_user!
     before_action :find_course, only: [:show, :update, :destroy, :edit]
 
     def index
@@ -16,7 +17,7 @@ class CoursesController < ApplicationController
             redirect_to course_path(@course)
         else
             render :new
-        end 
+        end
     end
     def edit
     end
