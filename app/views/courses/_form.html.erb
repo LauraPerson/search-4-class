@@ -5,27 +5,21 @@
     <h1>Edit the course</h1>
   <% end %>
   <%= simple_form_for @course do |f| %>
-  <%= f.error_notification %>
     <div class="form-group">
-      <%= f.label :title %>
-      <%= f.text_field :title, class: "form-control" %>
+      <%= f.input :title, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :description %>
-      <%= f.text_area :description, class: "form-control" %>
+      <%= f.input :description, class: "form-control" %>
     </div>
       <%= f.association :category, label: "Category", class: "form_control" %>
     <div class="form-group">
-      <%= f.label :Date %>
-      <%= f.datetime_field :schedule_date, class: "form-control" %>
+      <%= f.input :schedule_date, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :duration %>
-      <%= f.number_field :duration, class: "form-control" %>
+      <%= f.input :duration, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :price %>
-      <%= f.number_field :price, class: "form-control" %>
+      <%= f.input :price, class: "form-control" %>
     </div>
     <% if action_name == "new" || action_name == "create"%>
       <%= f.submit "Add" %>
