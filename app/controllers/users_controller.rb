@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
     def show
+      authorize current_user
     end
 
     def edit
