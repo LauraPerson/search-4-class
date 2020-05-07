@@ -3,15 +3,18 @@ class CoursesController < ApplicationController
     before_action :find_course, only: [:show, :update, :destroy, :edit]
 
     def index
-        @courses = Course.all
+        @courses = policy_scope(Course)
     end
     def show
+      authorize @course
     end
     def new
-        @course = Course.new
+       @course = Course.new
+       authorize @course
     end
     def create
         @course = Course.new(params_course)
+        authorize @course
         @course.user = current_user
         if @course.save
             redirect_to course_path(@course)
@@ -20,13 +23,16 @@ class CoursesController < ApplicationController
         end
     end
     def edit
+      authorize @course
     end
     def update
         @course.update(params_course)
+        authorize @course
         redirect_to course_path(@course)
     end
     def destroy
         @course.destroy
+        authorize @course
         redirect_to user_path(current_user)
     end
 
