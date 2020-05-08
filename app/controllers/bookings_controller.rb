@@ -2,15 +2,19 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @booking = Booking.new(params_booking)
+    @course = Course.find(params[:course_id])
+    @booking = Booking.new(user_id: current_user.id)
+    @booking.course = @course
     authorize @booking
     @booking.save
     redirect_to user_path(current_user)
   end
 
-  private
-
-  def params_booking
-    params.require(:booking).permit(:user_id, :course_id)
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to user_path(current_user)
   end
+
 end

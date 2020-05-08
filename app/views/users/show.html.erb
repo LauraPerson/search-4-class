@@ -4,7 +4,7 @@
 <h3> Courses bokked by the user </h3>
 <% current_user.bookings.each do |booking| %>
   <%= booking.course.title %>
-  <%= booking.course.user.first_name booking.course.user.last_name %>
+  <%= "#{booking.course.user.first_name} #{booking.course.user.last_name}" %>
   <%= booking.course.schedule_date %>
   <%= link_to 'Destroy Booking', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
