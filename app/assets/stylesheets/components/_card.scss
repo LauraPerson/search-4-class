@@ -1,0 +1,20 @@
+.card-category {
+  display: block;
+  height: 360px;
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.14902) 0px 2px 8px 0px;
+  border-radius: 16px;
+}
+
+.card-category-photo {
+  height: 274px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.card-category-name {
+  text-align: left;
+  padding: 5px;
+  font-style: normal;
+  font-size: 24px;
+}

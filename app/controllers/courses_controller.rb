@@ -3,7 +3,10 @@ class CoursesController < ApplicationController
     before_action :find_course, only: [:show, :update, :destroy, :edit]
 
     def index
-        @courses = policy_scope(Course)
+      # @courses = Course.search_by_title(params[:query])
+      authorize @courses
+      @courses = policy_scope(Course)
+        # @courses = Course.search_by_category(params[:query])
     end
     def show
       authorize @course
