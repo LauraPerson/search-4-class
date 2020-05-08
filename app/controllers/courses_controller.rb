@@ -3,48 +3,45 @@ class CoursesController < ApplicationController
     before_action :find_course, only: [:show, :update, :destroy, :edit]
 
     def index
-      # @courses = Course.search_by_title(params[:query])
-      authorize @courses
-      @courses = policy_scope(Course)
-        # @courses = Course.search_by_category(params[:query])
+      @courses = policy_scope(Course.search_by_title(params[:query]))
     end
     def show
       authorize @course
     end
     def new
-       @course = Course.new
-       authorize @course
+      @course = Course.new
+      authorize @course
     end
     def create
-        @course = Course.new(params_course)
-        authorize @course
-        @course.user = current_user
-        if @course.save
-            redirect_to course_path(@course)
-        else
-            render :new
-        end
+      @course = Course.new(params_course)
+      authorize @course
+      @course.user = current_user
+      if @course.save
+        redirect_to course_path(@course)
+      else
+        render :new
+      end
     end
     def edit
       authorize @course
     end
     def update
-        @course.update(params_course)
-        authorize @course
-        redirect_to course_path(@course)
+      @course.update(params_course)
+      authorize @course
+      redirect_to course_path(@course)
     end
     def destroy
-        @course.destroy
-        authorize @course
-        redirect_to user_path(current_user)
+      @course.destroy
+      authorize @course
+      redirect_to user_path(current_user)
     end
 
     private
     def find_course
-        @course = Course.find(params[:id])
+      @course = Course.find(params[:id])
     end
 
     def params_course
-        params.require(:course).permit(:title, :price, :schedule_date, :description, :category_id, :duration)
+      params.require(:course).permit(:title, :price, :schedule_date, :description, :category_id, :duration)
     end
 end
