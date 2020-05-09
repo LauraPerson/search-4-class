@@ -23,7 +23,7 @@
           <div class="result-course-price">
             <p> <%= course.price %> R$ </p>
           <div class="result-course-duration">
-            <p> <%= course.duration %> H </p>
+            <p> <%= course.duration %> min </p>
           </div>
           </div>
           <div class="result-course-description">
@@ -31,7 +31,17 @@
           </div>
         </div>
         <div class="card-results-date">
-          <%= course.schedule_date %>
+          <div class="result-course-date">
+            <%= course.schedule_date.to_date %>
+          </div>
+          <div class="result-course-hour">
+            <% if course.schedule_date.min == 0 %>
+              <% min = "00" %>
+              <%= "#{course.schedule_date.hour}:#{min}" %>
+            <% else %>
+              <%= "#{course.schedule_date.hour}:#{course.schedule_date.min}" %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
