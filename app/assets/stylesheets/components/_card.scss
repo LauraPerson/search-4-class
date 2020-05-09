@@ -1,9 +1,17 @@
+$box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+$box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
+
 .card-category {
   display: block;
   height: 360px;
   text-align: left;
-  box-shadow: rgba(0, 0, 0, 0.14902) 0px 2px 8px 0px;
+  box-shadow:$box-shadow;
   border-radius: 16px;
+  &:hover {
+    color: yellow;
+    text-decoration: none !important;
+    box-shadow: $box-shadow-hover;
+  }
 }
 
 .card-category-photo {
@@ -27,9 +35,11 @@
   margin-left: 12px;
   margin-right: 12px;
   padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.14902) 0px 2px 8px 0px;
+  box-shadow: $box-shadow;
   &:hover {
-    text-decoration: none;
+    color: yellow;
+    text-decoration: none !important;
+    box-shadow: $box-shadow-hover;
   }
 }
 

@@ -23,8 +23,8 @@ class Course < ApplicationRecord
     end
   end
 
-  # def self.search_by_category(category)
-  #   id = Category.find_by(name: category).id
-  #   Course.find_by(category_id: id)
-  # end
+  def self.search_by_category(category)
+    id = Category.find_by(name: category).id
+    Course.where(category_id: id)
+  end
 end
