@@ -5,3 +5,5 @@
   <%= @course.duration %>
   <%= @course.category %>
   <%= @course.schedule_date %>
+
+<%= link_to "Book this class", course_bookings_path(@course), method: :post %>
