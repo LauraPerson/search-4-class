@@ -9,14 +9,14 @@ class UsersController < ApplicationController
     end
 
     def update
-        current_user.update(params_user)
-        redirect_to user_path(current_user)
+      current_user.update(params_user)
+      redirect_to user_path(current_user)
     end
 
     private
 
     def params_user
-        params.require(:user).permit(:first_name, :last_name, :email, :password)
+      params.require(:user).permit(:first_name, :last_name, :email, :password)
     end
 end
 

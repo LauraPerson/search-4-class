@@ -5,6 +5,10 @@ class CoursePolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    return true
+  end
+
   def show?
     return true
   end
@@ -20,4 +24,5 @@ class CoursePolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
 end
