@@ -1,8 +1,9 @@
 <div class="page-container">
-
+<div class="container-course-show">
   <div class='course-show-category'>
     <%= @course.category.name %>
   </div>
+</div>
 
   <div class="course-show-card">
     <div class="course-show-title">
@@ -14,17 +15,17 @@
        <b><p><%= "#{@course.user.first_name} #{@course.user.last_name}"  %></p></b>
       </div>
       <div class="description-showcard">
-        <b><p>Descripption</p></b>
+        <b><p>Description</p></b>
       </div>
       <div class="show-description">
         <p><%= @course.description %></p>
         <br>
         <p><%= "Hour: #{@course.schedule_date.strftime("%H:%M")}" %></p>
-        <p><%= "Date: #{@course.schedule_date.strftime("%m/%d/%y")}" %></p>
+        <p><%= "Date: #{@course.schedule_date.strftime("%d/%m/%y")}" %></p>
       </div>
     </div>
     <div class="course-show-flex">
-      <p><%= "#{@course.duration} hour" %></p>
+      <p><%= "#{@course.duration} minutes" %></p>
       <%= link_to "Book this class", course_bookings_path(@course), method: :post, class: 'btn-book-class' %>
       <p><%= "Price: $ #{@course.price}" %></p>
     </div>

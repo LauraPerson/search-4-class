@@ -1,9 +1,4 @@
 <div class="container">
-
-  <div>
-    <%= link_to 'New Course', new_course_path, {class: "btn-create-new-course"} %>
-  </div>
-
   <div class="result-title">
     <h1>Courses list</h1>
   </div>
@@ -26,7 +21,7 @@
               <p> <%= course.duration %> min </p>
             </div>
             <div class="result-course-price ml-5">
-              <p> <%= course.price %> R$ </p>
+              <p> <%= course.price %> $ </p>
             </div>
           </div>
           <div class="result-course-description">

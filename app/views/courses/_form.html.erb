@@ -16,14 +16,14 @@
       <%= f.input :schedule_date, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.input :duration, class: "form-control" %>
+      <%= f.input :duration, class: "form-control", label: "Duration (min)" %>
     </div>
     <div class="form-group">
-      <%= f.input :price, class: "form-control" %>
+      <%= f.input :price, class: "form-control", label: "Price ($)" %>
     </div>
     <% if action_name == "new" || action_name == "create"%>
-      <%= f.submit "Add" %>
+      <%= f.submit "Add", class: "btn-blue-green" %>
     <% else %>
-      <%= f.submit "Edit" %>
+      <%= f.submit "Edit", class: "btn-blue-green" %>
     <% end %>
   <% end %>
