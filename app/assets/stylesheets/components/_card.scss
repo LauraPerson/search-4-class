@@ -84,3 +84,47 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
   text-align: right;
   font-size: 18px;
 }
+.course-show-category {
+  margin: 0px 0px 0px 666px;
+  background-color: $cream;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+.course-show-title {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  padding: 40px
+}
+
+.course-show-card {
+  background-color: $cream;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 50px;
+}
+
+.course-show-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 8px 20px;
+}
+
+.photo-description {
+  padding: 10px 20px 8px 20px;
+}
+
+.photo-showcard-user-name {
+font-weight: bold;
+font-size: 20px;
+}
+
+.description-showcard {
+font-weight: bold;
+font-size: 20px;
+}
+
