@@ -2,7 +2,7 @@
   <h1>Find a course on Search 4 class </h1>
 
   <%= form_tag courses_path, method: :get do %>
-    <%= text_field_tag :query %>
+    <%= text_field_tag :query, "", placeholder: "Enter a course name" %>
     <button>Submit</button>
   <% end %>
 

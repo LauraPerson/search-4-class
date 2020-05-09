@@ -20,3 +20,54 @@
   font-style: normal;
   font-size: 24px;
 }
+
+.card-results-courses {
+  display: flex;
+  height: 240px;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.14902) 0px 2px 8px 0px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.card-results-prof {
+}
+
+.result-prof-name {
+  font-size: 20px;
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card-results-information {
+  margin-left: 30px;
+    &:hover {
+      text-decoration: none;
+    }
+}
+
+.result-course-name {
+  font-size: 40px;
+}
+
+.result-course-price {
+  font-size: 20px;
+}
+
+.result-course-duration {
+  font-size: 20px;
+}
+
+.result-course-description {
+  font-size: 20px;
+  margin-top: 24px;
+}
+
+.card-results-date {
+  flex-grow: 1;
+  text-align: right;
+}
+
