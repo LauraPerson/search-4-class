@@ -9,7 +9,7 @@
     <div class="row">
       <% @categories.each do |category| %>
         <div class="col-4 mt-4">
-          <%= link_to courses_path(category: category.name) do %>
+          <%= link_to courses_path(category: category.name), {class: "without-text-decoration"} do %>
             <div class="card-category">
               <div class="card-category-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path category.name %>')"></div>
               <div class="card-category-name">
