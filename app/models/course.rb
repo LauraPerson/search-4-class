@@ -14,4 +14,17 @@ class Course < ApplicationRecord
       errors.add(:schedule_date, "can't be in the past")
     end
   end
+
+  def self.search_by_title(search)
+    if search
+      Course.where("title LIKE '%#{search.capitalize}%'")
+    else
+      Course.all
+    end
+  end
+
+  # def self.search_by_category(category)
+  #   id = Category.find_by(name: category).id
+  #   Course.find_by(category_id: id)
+  # end
 end
