@@ -17,14 +17,13 @@ class Course < ApplicationRecord
 
   def self.search_by_title(search)
     if search
-      Course.where("title LIKE '%#{search.capitalize}%'")
+      Course.where("title ILIKE '%#{search}%'")
     else
       Course.all
     end
   end
 
-  def self.search_by_category(category)
-    id = Category.find_by(name: category).id
-    Course.where(category_id: id)
+  def self.search_by_category(id_category)
+    Course.where(category_id: id_category)
   end
 end
