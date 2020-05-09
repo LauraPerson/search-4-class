@@ -15,7 +15,7 @@
         <div class="col-4 mt-4">
           <%= link_to courses_path(category: category.name), {class: "without-text-decoration"} do %>
             <div class="card-category">
-              <div class="card-category-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= image_path(category.name)%>.jpg')"></div>
+              <div class="card-category-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= image_path(category.name)%>')"></div>
               <div class="card-category-name">
                 <%= category.name %>
               </div>
