@@ -1,3 +1,20 @@
+.btn-blue-green {
+  border: none;
+  padding: 4px 16px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  background-color: $blue-green;
+  color: black;
+  border-radius: 8px;
+  &:hover {
+    background-color: $blue-green-light;
+    text-decoration: none;
+    color: $dark-gray;
+    font-weight: normal;
+  }
+}
+
 .btn-create-new-course {
   border: none;
   padding: 10px 22px;
@@ -11,6 +28,8 @@
   &:hover {
     background-color: $blue-green-light;
     text-decoration: none;
+    color: $dark-gray;
+    font-weight: normal;
   }
 }
 
@@ -27,10 +46,12 @@
   &:hover {
     text-decoration: none;
     background-color: $blue-green-light;
+    font-weight: normal;
+    color: black;
   }
 }
 
-.btn-destroy-course {
+.btn-destroy {
   text-decoration: none;
   border: none;
   padding: 5px 20px;
@@ -44,6 +65,42 @@
   &:hover {
     background-color: $blue-green-light;
     text-decoration: none;
+    font-weight: normal;
+    color: black;
+  }
+}
+
+.btn-navbar {
+  border: none;
+  padding: 10px 18px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  background-color: $blue-green;
+  color: black;
+  border-radius: 10px;
+  &:hover {
+    background-color: $blue-green-light;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 3px #999;
+  }
+}
+
+.btn-sign-outline {
+  border: 1px $blue-green solid ;
+  padding: 10px 18px;
+  background-color: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;;
+  color: black;
+  border-radius: 10px;
+  &:hover {
+    border-color: $blue-green-light;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 3px #999;
   }
 }
 

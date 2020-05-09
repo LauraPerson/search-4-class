@@ -1,46 +1,54 @@
 <div class="container">
 
   <div>
-    <%= link_to 'New Course', new_course_path %>
+    <%= link_to 'New Course', new_course_path, {class: "btn-create-new-course"} %>
   </div>
 
-  <h1>Courses list</h1>
+  <div class="result-title">
+    <h1>Courses list</h1>
+  </div>
 
   <% @courses.each do |course| %>
-    <%= link_to course_path(course) do%>
+    <%= link_to course_path(course), {class: "without-text-decoration"} do%>
       <div class="card-results-courses">
         <div class="card-results-prof">
           <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"></div>
           <div class="result-prof-name">
-            <%= course.user.first_name %>
-            <%= course.user.last_name %>
+            <p><%= course.user.first_name %> <%= course.user.last_name %></p>
           </div>
         </div>
         <div class="card-results-information">
           <div class="result-course-name">
-            <%= course.title %>
+            <h1><%= course.title %></h1>
           </div>
-          <div class="result-course-price">
-            <p> <%= course.price %> R$ </p>
-          <div class="result-course-duration">
-            <p> <%= course.duration %> min </p>
-          </div>
+          <div class="result-course-price-category d-flex">
+            <div class="result-course-duration">
+              <p> <%= course.duration %> min </p>
+            </div>
+            <div class="result-course-price ml-5">
+              <p> <%= course.price %> R$ </p>
+            </div>
           </div>
           <div class="result-course-description">
-            <%= course.description %>
+            <p><%= course.description %></p>
           </div>
         </div>
-        <div class="card-results-date">
-          <div class="result-course-date">
-            <%= course.schedule_date.to_date %>
+        <div class="card-results-date-category d-flex flex-column justify-content-between">
+          <div class="card-result-date">
+            <div class="result-course-date">
+              <p><%= course.schedule_date.to_date %></p>
+            </div>
+            <div class="result-course-hour">
+              <% if course.schedule_date.min == 0 %>
+                <p><% min = "00" %></p>
+                <p><%= "#{course.schedule_date.hour}:#{min}" %></p>
+              <% else %>
+                <p><%= "#{course.schedule_date.hour}:#{course.schedule_date.min}" %></p>
+              <% end %>
+            </div>
           </div>
-          <div class="result-course-hour">
-            <% if course.schedule_date.min == 0 %>
-              <% min = "00" %>
-              <%= "#{course.schedule_date.hour}:#{min}" %>
-            <% else %>
-              <%= "#{course.schedule_date.hour}:#{course.schedule_date.min}" %>
-            <% end %>
+          <div class="result-course-category">
+            <p><%= course.category.name %></p>
           </div>
         </div>
       </div>

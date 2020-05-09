@@ -1,15 +1,19 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
 
+.without-text-decoration:hover {
+  text-decoration: none;
+}
+
 .card-category {
+  color: black;
+  text-align: center;
   display: block;
-  height: 360px;
   text-align: left;
   box-shadow:$box-shadow;
   border-radius: 16px;
+  border-radius: 8px;
   &:hover {
-    color: yellow;
-    text-decoration: none !important;
     box-shadow: $box-shadow-hover;
   }
 }
@@ -25,19 +29,18 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
 .card-category-name {
   text-align: left;
   padding: 5px;
+  padding-left: 20px;
   font-style: normal;
   font-size: 24px;
 }
 
 .card-results-courses {
+  color: black;
   display: flex;
   height: 240px;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 20px;
   box-shadow: $box-shadow;
   &:hover {
-    color: yellow;
     text-decoration: none !important;
     box-shadow: $box-shadow-hover;
   }
@@ -51,6 +54,7 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
 
 .card-results-information {
   margin-left: 30px;
+  flex-grow: 3;
 }
 
 .result-course-name {
@@ -66,16 +70,20 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
 }
 
 .result-course-description {
-  font-size: 20px;
-  margin-top: 24px;
+  font-size: 18px;
+  border : solid 1px $medium-gray;
+  border-radius: 4px;
+  font-style: italic;
+  color: $medium-gray;
+  padding: 10px;
+  height: 100px;
 }
 
-.card-results-date {
+.card-results-date-category {
   flex-grow: 1;
   text-align: right;
   font-size: 18px;
 }
-
 .course-show-category {
   margin: 0px 0px 0px 666px;
   background-color: $cream;
@@ -119,3 +127,4 @@ font-size: 20px;
 font-weight: bold;
 font-size: 20px;
 }
+
