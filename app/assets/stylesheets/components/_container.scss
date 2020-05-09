@@ -1,0 +1,15 @@
+.page-container {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.user-info {
+  margin: auto;
+  width: 600px;
+  padding: 5px;
+  background-color: $cream;
+  border-radius: 10px;
+  h5 {
+    font-weight: bold;
+  }
+}

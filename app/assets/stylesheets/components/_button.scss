@@ -1,0 +1,48 @@
+.btn-create-new-course {
+  border: none;
+  padding: 10px 22px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: $blue-green;
+  color: black;
+  border-radius: 8px;
+  &:hover {
+    background-color: $blue-green-light;
+    text-decoration: none;
+  }
+}
+
+.btn-edit-course {
+  border: none;
+  padding: 5px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: $blue-green;
+  color: black;
+  border-radius: 8px;
+  &:hover {
+    text-decoration: none;
+    background-color: $blue-green-light;
+  }
+}
+
+.btn-destroy-course {
+  text-decoration: none;
+  border: none;
+  padding: 5px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: $blue-green;
+  color: black;
+  border-radius: 8px;
+  &:hover {
+    background-color: $blue-green-light;
+    text-decoration: none;
+  }
+}
