@@ -22,7 +22,7 @@
           <h6 class="card-subtitle mb-2 text-muted">Teacher <%= "#{booking.course.user.first_name}" "#{booking.course.user.last_name}" %></h6>
           <p class="card-text">Description: <%= booking.course.description %></p>
           <div class="d-flex justify-content-start">
-            <p class="card-text mr-4">Date: <%= booking.course.schedule_date.strftime("%m/%d/%y") %></p>
+            <p class="card-text mr-4">Date: <%= booking.course.schedule_date.strftime("%d/%m/%y") %></p>
             <p class="card-text">Hour: <%= booking.course.schedule_date.strftime("%H:%M") %></p>
           </div>
           <div class="d-flex justify-content-center">
@@ -42,7 +42,7 @@
           <h5 class="card-header mb-3"><%= course.title %> Course</h5>
           <p class="card-text">Description: <%= course.description %></p>
           <div class="d-flex justify-content-start">
-            <p class="card-text mr-4">Date: <%= course.schedule_date.strftime("%m/%d/%y") %></p>
+            <p class="card-text mr-4">Date: <%= course.schedule_date.strftime("%d/%m/%y") %></p>
             <p class="card-text">Hour: <%= course.schedule_date.strftime("%H:%M") %></p>
           </div>
           <div class="d-flex justify-content-around">
