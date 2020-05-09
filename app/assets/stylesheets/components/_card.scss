@@ -1,9 +1,17 @@
+$box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+$box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
+
 .card-category {
   display: block;
   height: 360px;
   text-align: left;
-  box-shadow: rgba(0, 0, 0, 0.14902) 0px 2px 8px 0px;
+  box-shadow:$box-shadow;
   border-radius: 16px;
+  &:hover {
+    color: yellow;
+    text-decoration: none !important;
+    box-shadow: $box-shadow-hover;
+  }
 }
 
 .card-category-photo {
@@ -20,3 +28,51 @@
   font-style: normal;
   font-size: 24px;
 }
+
+.card-results-courses {
+  display: flex;
+  height: 240px;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding: 20px;
+  box-shadow: $box-shadow;
+  &:hover {
+    color: yellow;
+    text-decoration: none !important;
+    box-shadow: $box-shadow-hover;
+  }
+}
+
+.result-prof-name {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card-results-information {
+  margin-left: 30px;
+}
+
+.result-course-name {
+  font-size: 40px;
+}
+
+.result-course-price {
+  font-size: 20px;
+}
+
+.result-course-duration {
+  font-size: 20px;
+}
+
+.result-course-description {
+  font-size: 20px;
+  margin-top: 24px;
+}
+
+.card-results-date {
+  flex-grow: 1;
+  text-align: right;
+  font-size: 18px;
+}
+

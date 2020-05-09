@@ -2,19 +2,21 @@
   <h1>Find a course on Search 4 class </h1>
 
   <%= form_tag courses_path, method: :get do %>
-    <%= text_field_tag :query %>
+    <%= text_field_tag :query, "", placeholder: "Enter a course name" %>
     <button>Submit</button>
   <% end %>
 
     <div class="row">
       <% @categories.each do |category| %>
         <div class="col-4 mt-4">
-          <div class="card-category">
-            <div class="card-category-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path category.name %>')"></div>
-            <div class="card-category-name">
-              <%= category.name %>
+          <%= link_to courses_path(category: category.name) do %>
+            <div class="card-category">
+              <div class="card-category-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path category.name %>')"></div>
+              <div class="card-category-name">
+                <%= category.name %>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
     </div>

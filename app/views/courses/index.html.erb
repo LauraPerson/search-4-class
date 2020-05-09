@@ -1,11 +1,49 @@
+<div class="container">
 
-<h1>Courses list</h1>
-<% @courses.each do |course| %>
-  <%= course.title %>
-  <%= course.description %>
-  <%= course.price %>
-  <%= course.duration %>
-  <%= link_to 'See Course', course_path(course) %>
-<% end %>
+  <div>
+    <%= link_to 'New Course', new_course_path %>
+  </div>
 
-<%= link_to 'New Course', new_course_path %>
+  <h1>Courses list</h1>
+
+  <% @courses.each do |course| %>
+    <%= link_to course_path(course) do%>
+      <div class="card-results-courses">
+        <div class="card-results-prof">
+          <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"></div>
+          <div class="result-prof-name">
+            <%= course.user.first_name %>
+            <%= course.user.last_name %>
+          </div>
+        </div>
+        <div class="card-results-information">
+          <div class="result-course-name">
+            <%= course.title %>
+          </div>
+          <div class="result-course-price">
+            <p> <%= course.price %> R$ </p>
+          <div class="result-course-duration">
+            <p> <%= course.duration %> min </p>
+          </div>
+          </div>
+          <div class="result-course-description">
+            <%= course.description %>
+          </div>
+        </div>
+        <div class="card-results-date">
+          <div class="result-course-date">
+            <%= course.schedule_date.to_date %>
+          </div>
+          <div class="result-course-hour">
+            <% if course.schedule_date.min == 0 %>
+              <% min = "00" %>
+              <%= "#{course.schedule_date.hour}:#{min}" %>
+            <% else %>
+              <%= "#{course.schedule_date.hour}:#{course.schedule_date.min}" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
