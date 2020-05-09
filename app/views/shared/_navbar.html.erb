@@ -9,7 +9,7 @@
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn-sign-outline" %>
     </div>
   <%  else %>
-    <%= link_to "Home Page", root_path %>
+    <%= link_to "Home Page", root_path, class: "btn-navbar" %>
     <div class="logo mt-2 mb-2">
       <%= image_tag "logo_search4class.png", alt: "Search 4 Class", width: 200 %>
     </div>
