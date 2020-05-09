@@ -9,7 +9,6 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
   color: black;
   text-align: center;
   display: block;
-  height: 330px;
   text-align: left;
   box-shadow:$box-shadow;
   border-radius: 16px;
@@ -30,6 +29,7 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
 .card-category-name {
   text-align: left;
   padding: 5px;
+  padding-left: 20px;
   font-style: normal;
   font-size: 24px;
 }
