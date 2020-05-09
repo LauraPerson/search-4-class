@@ -1,17 +1,21 @@
 <div class="container">
-  <h1>Find a course on Search 4 class </h1>
+  <div class="home-title my-4">
+    <h1>Find a course on Search 4 class </h1>
+  </div>
 
-  <%= form_tag courses_path, method: :get do %>
-    <%= text_field_tag :query, "", placeholder: "Enter a course name" %>
-    <button>Submit</button>
-  <% end %>
+  <div class="home-search-bar my-2">
+    <%= form_tag courses_path, method: :get do %>
+      <%= text_field_tag :query, "", placeholder: "Enter a course name" %>
+      <button class="btn-blue-green">Submit</button>
+    <% end %>
+  </div>
 
     <div class="row">
       <% @categories.each do |category| %>
         <div class="col-4 mt-4">
-          <%= link_to courses_path(category: category.name) do %>
+          <%= link_to courses_path(category: category.name), {class: "without-text-decoration"} do %>
             <div class="card-category">
-              <div class="card-category-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path category.name %>')"></div>
+              <div class="card-category-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= image_path(category.name) %>')"></div>
               <div class="card-category-name">
                 <%= category.name %>
               </div>
