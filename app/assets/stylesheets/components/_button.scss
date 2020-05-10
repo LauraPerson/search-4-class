@@ -1,3 +1,5 @@
+$box-shadow-btn: 0 1.5px #999;
+
 .btn-blue-green {
   border: none;
   padding: 4px 16px;
@@ -100,7 +102,7 @@
     background-color: $blue-green-light;
     text-decoration: none;
     color: black;
-    box-shadow: 0 3px #999;
+    box-shadow: $box-shadow-btn;
   }
 }
 
@@ -117,7 +119,7 @@
     border-color: $blue-green-light;
     text-decoration: none;
     color: black;
-    box-shadow: 0 3px #999;
+    box-shadow: $box-shadow-btn;
   }
 }
 
@@ -136,5 +138,21 @@
     background-color: $blue-green-light;
     text-decoration: none;
     color: $gray;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+  &:hover {
+  border: none;
+  padding: 4px 16px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: $blue-green;
+  color: black;
+  border-radius: 8px;
+  opacity: 0.5;
   }
 }

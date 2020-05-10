@@ -29,6 +29,12 @@
       <% if current_user != @course.user %>
         <%= link_to "Book this class", course_bookings_path(@course), method: :post, class: 'btn-book-class' %>
       <% end %>
+      <% if current_user === @course.user %>
+        <div class="buttons-user">
+          <%= link_to "Edit this class", edit_course_path(@course), class: 'btn-book-class' %>
+          <%= link_to "Delete this class", course_path(@course), method: :delete, data: {confirm: "Are you sure ?"}, class: 'btn-book-class' %>
+        </div>
+      <% end %>
       <p><%= "Price: $ #{@course.price}" %></p>
     </div>
   </div>
