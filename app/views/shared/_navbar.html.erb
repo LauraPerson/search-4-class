@@ -1,18 +1,12 @@
 <nav class="navbar navbar-light bg-light nav_police">
   <% if user_signed_in? %>
-    <%= link_to "Home Page", root_path, class: "link-home-page" %>
-    <div class="mt-2 mb-2">
-      <%= image_tag "logo_search4class.png", alt: "Search 4 Class", width: 200, height: 50 %>
-    </div>
+    <%= link_to image_tag("logo_search4class.png", width: 200, height: 50), root_path, class: "link-home-page" %>
     <div class="navbar-right">
       <%= link_to "Your profile", user_path(current_user), class: "btn-navbar" %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn-sign-outline" %>
     </div>
   <%  else %>
-    <%= link_to "Home Page", root_path, class: "link-home-page" %>
-    <div class="logo mt-2 mb-2">
-      <%= image_tag "logo_search4class.png", alt: "Search 4 Class", width: 200 %>
-    </div>
+    <%= link_to image_tag("logo_search4class.png", width: 200, height: 50), root_path, class: "link-home-page" %>
      <div class="navbar-right">
       <%= link_to "Sign in", new_user_session_path, class: "btn-navbar" %>
       <%= link_to "Sign up", new_user_registration_path, class: "btn-sign-outline" %>
