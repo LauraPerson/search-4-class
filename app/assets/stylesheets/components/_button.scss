@@ -3,7 +3,8 @@
   padding: 4px 16px;
   text-align: center;
   display: inline-block;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: bold;
   background-color: $blue-green;
   color: black;
   border-radius: 8px;
@@ -12,6 +13,22 @@
     text-decoration: none;
     color: $dark-gray;
     font-weight: normal;
+  }
+}
+
+.btn-outline {
+  border: 1px $blue-green solid ;
+  padding: 4px 16px;
+  background-color: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 10px;
+  color: $blue-green;
+  &:hover {
+    color: $blue-green-dark;
+    border-color: $blue-green-dark;
+    text-decoration: none;
   }
 }
 
@@ -118,5 +135,6 @@
   &:hover {
     background-color: $blue-green-light;
     text-decoration: none;
+    color: $gray;
   }
 }

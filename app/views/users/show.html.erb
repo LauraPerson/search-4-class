@@ -13,20 +13,26 @@
   </div>
   <div class="title-user-courses mx-5 my-5"><h4> Your booked courses: </h4></div>
 
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center flex-wrap">
     <% current_user.bookings.each do |booking| %>
-      <div class="card mt-2" style="width: 50rem;">
-        <div class="card-body">
+      <div class="card-course-user-show mt-2">
+        <div>
           <h5 class="card-header mb-3"><%= booking.course.title %></h5>
+        </div>
+        <div>
           <h6 class="card-subtitle mb-2 text-muted">Teacher <%= "#{booking.course.user.first_name} #{booking.course.user.last_name}" %></h6>
+        </div>
+        <div class="mb-3">
           <p class="card-text">Description: <%= booking.course.description %></p>
+        </div>
+        <div class="card-align-bottom">
           <div class="d-flex justify-content-start">
             <p class="card-text mr-4">Date: <%= booking.course.schedule_date.strftime("%d/%m/%y") %></p>
             <p class="card-text">Hour: <%= booking.course.schedule_date.strftime("%H:%M") %></p>
           </div>
           <div class="d-flex justify-content-center">
             <%= link_to 'Destroy Booking', booking_path(booking), method: :delete, class: "btn-destroy", data: { confirm: 'Are you sure?' } %>
-          </div>
+        </div>
         </div>
       </div>
     <% end %>
@@ -35,7 +41,7 @@
   <div class="title-user-courses mx-5 my-5"><h4> Courses you are offering: </h4></div>
 
   <div class="d-flex justify-content-center">
-    <div class="card mt-2" style="width: 50rem;">
+    <div class="card-course-user-show mt-2" style="width: 50rem;">
     <% current_user.courses.each do |course| %>
         <div class="card-body">
           <h5 class="card-header mb-3"><%= course.title %> Course</h5>
@@ -45,8 +51,9 @@
             <p class="card-text">Hour: <%= course.schedule_date.strftime("%H:%M") %></p>
           </div>
           <div class="d-flex justify-content-around">
-            <%= link_to 'Edit Course', edit_course_path(course), class: "btn-edit-course" %>
-            <%= link_to 'Destroy Course', course_path(course), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
+            <%= link_to 'Edit Course', edit_course_path(course), class: "btn-outline" %>
+            <%= link_to 'Show Course', course_path(course), class: "btn-blue-green" %>
+            <%= link_to 'Destroy Course', course_path(course), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-outline" %>
           </div>
         </div>
       <% end %>

@@ -1,9 +1,9 @@
 <div class="page-container">
-<div class="container-course-show">
-  <div class='course-show-category'>
-    <%= @course.category.name %>
+  <div class="container-course-show mb-3">
+    <div class='course-show-category'>
+      <%= @course.category.name %>
+    </div>
   </div>
-</div>
 
   <div class="course-show-card">
     <div class="course-show-title">
@@ -26,8 +26,13 @@
     </div>
     <div class="course-show-flex">
       <p><%= "#{@course.duration} minutes" %></p>
-      <%= link_to "Book this class", course_bookings_path(@course), method: :post, class: 'btn-book-class' %>
+      <% if current_user != @course.user %>
+        <%= link_to "Book this class", course_bookings_path(@course), method: :post, class: 'btn-book-class' %>
+      <% end %>
       <p><%= "Price: $ #{@course.price}" %></p>
     </div>
+  </div>
+  <div class="container-course-show mt-2">
+    <%= link_to "Back to your profile", user_path(current_user), class: "btn-outline" %>
   </div>
 </div>
