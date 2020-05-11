@@ -8,7 +8,7 @@
     <%= f.input :title, class: "form-control" %>
     <%= f.input :description, class: "form-control" %>
     <%= f.association :category, label: "Category", class: "form_control" %>
-    <%= f.input :schedule_date, class: "form-control" %>
+    <%= f.input :schedule_date, class: "form-control", html5: true %>
     <%= f.input :duration, class: "form-control", label: "Duration (min)" %>
     <%= f.input :price, class: "form-control", label: "Price ($)" %>
     <% if action_name == "new" || action_name == "create"%>
