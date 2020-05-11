@@ -70,22 +70,10 @@ $box-shadow-btn: 0 1.5px #999;
   }
 }
 
-.btn-destroy {
-  text-decoration: none;
-  border: none;
-  padding: 5px 20px;
-  text-align: center;
-  display: inline-block;
-  font-size: 13px;
-  font-weight: bold;
-  background-color: $blue-green;
-  color: black;
-  border-radius: 8px;
+.btn-font-awesome {
+  color: $blue-green;
   &:hover {
-    background-color: $blue-green-light;
-    text-decoration: none;
-    font-weight: normal;
-    color: black;
+    color: $blue-green-light;
   }
 }
 
