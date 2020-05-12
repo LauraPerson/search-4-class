@@ -17,7 +17,7 @@ class Course < ApplicationRecord
 
   def self.search_by_title(search)
     if search
-      Course.where("title ILIKE '%#{search}%'")
+      Course.where("title ILIKE ?", "%#{search}%")
     else
       Course.all
     end

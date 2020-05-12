@@ -20,8 +20,8 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
 
 .card-category-photo {
   height: 274px;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   background-position: center;
   background-size: cover;
 }
@@ -85,12 +85,6 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
   font-size: 18px;
 }
 
-.container-course-show {
-  margin-right: 50px ;
-  display: flex;
-  justify-content: flex-end;
-}
-
 .course-show-category {
   background-color: $cream;
   padding: 10px 40px;
@@ -103,14 +97,13 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
   font-weight: bold;
   font-size: 40px;
   text-align: center;
-  padding: 40px
+  padding: 16px
 }
 
 .course-show-card {
   background-color: $cream;
   padding: 10px;
   border-radius: 8px;
-  margin: 50px;
 }
 
 .course-show-flex {
@@ -134,3 +127,16 @@ font-weight: bold;
 font-size: 20px;
 }
 
+.card-course-user-show {
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  border-radius: 4px;
+  border: $medium-gray 1px solid;
+  padding: 20px;
+  background-color: white;
+}
+
+.card-align-bottom {
+  margin-top: auto;
+}
