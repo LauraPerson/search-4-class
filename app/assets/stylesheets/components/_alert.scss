@@ -4,3 +4,11 @@
   right: 16px;
   z-index: 1000;
 }
+
+.alert-already-booked {
+  border: red 1px solid;
+  color: red;
+  font-style: italic;
+  padding: 10px;
+  border-radius: 8px;
+}

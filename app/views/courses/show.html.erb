@@ -27,7 +27,13 @@
     <div class="course-show-flex">
       <p><%= "#{@course.duration} minutes" %></p>
       <% if current_user != @course.user %>
-        <%= link_to "Book this class", course_bookings_path(@course), method: :post, class: 'btn-book-class' %>
+        <% if @booking %>
+          <div class="alert-already-booked">
+            You already booked this course
+          </div>
+        <% else %>
+          <%= link_to "Book this class", course_bookings_path(@course), method: :post, class: 'btn-book-class' %>
+        <% end %>
       <% end %>
       <% if current_user === @course.user %>
         <div class="buttons-user">
