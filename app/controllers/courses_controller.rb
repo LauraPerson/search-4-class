@@ -9,7 +9,8 @@ class CoursesController < ApplicationController
           {
             lat: course.latitude,
             lng: course.longitude,
-            infoWindow: render_to_string(partial: "info_window", locals: { course: course })
+            infoWindow: render_to_string(partial: "info_window", locals: { course: course }),
+            image_url: helpers.asset_url('lamp_marker.png')
           }
         end
       else
@@ -18,7 +19,8 @@ class CoursesController < ApplicationController
           {
             lat: course.latitude,
             lng: course.longitude,
-            infoWindow: render_to_string(partial: "info_window", locals: { course: course })
+            infoWindow: render_to_string(partial: "info_window", locals: { course: course }),
+            image_url: helpers.asset_url('lamp_marker.png')
           }
         end
       end
