@@ -7,7 +7,11 @@
     <%= link_to course_path(course), {class: "without-text-decoration"} do%>
       <div class="card-results-courses">
         <div class="card-results-prof">
-          <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"></div>
+          <% if course.user.photo.attached? %>
+            <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path course.user.photo.key, crop: :fill %>')"></div>
+          <% else %>
+            <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "avatar.jpg", crop: :fill %>')"></div>
+          <% end %>
           <div class="result-prof-name">
             <p><%= course.user.first_name %> <%= course.user.last_name %></p>
           </div>
