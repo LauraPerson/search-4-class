@@ -1,0 +1,11 @@
+<div class="card-course mt-2 mr-2">
+  <div>
+    <h5 class="card-header text-center my-2"><%= course.title %></h5>
+  </div>
+  <div>
+    <h6 class="card-subtitle my-2 text-muted">Teacher: <%= "#{course.user.first_name} #{course.user.last_name}" %></h6>
+  </div>
+  <div class="my-1">
+    <p class="card-subtitle my-2 text-muted">Address: <%= course.address %></p>
+  </div>
+</div>

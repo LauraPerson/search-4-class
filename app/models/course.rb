@@ -8,6 +8,7 @@ class Course < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: :true, numericality: { only_integer: true, greater_than: 0 }
   validate :schedule_date_cant_be_past
+  validates :address, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 

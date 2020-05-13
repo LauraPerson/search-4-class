@@ -5,8 +5,22 @@ class CoursesController < ApplicationController
     def index
       if params[:query]
         @courses = policy_scope(Course.search_by_title(params[:query]))
+        @markers = @courses.map do |course|
+          {
+            lat: course.latitude,
+            lng: course.longitude,
+            infoWindow: render_to_string(partial: "info_window", locals: { course: course })
+          }
+        end
       else
         @courses = policy_scope(Course.search_by_category(params[:category]))
+        @markers = @courses.map do |course|
+          {
+            lat: course.latitude,
+            lng: course.longitude,
+            infoWindow: render_to_string(partial: "info_window", locals: { course: course })
+          }
+        end
       end
     end
     def show

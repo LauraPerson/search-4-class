@@ -19,6 +19,7 @@
       </div>
       <div class="show-description">
         <p><%= @course.description %></p>
+        <p>Address: <%= @course.address %></p>
         <br>
         <p><%= "Hour: #{@course.schedule_date.strftime("%H:%M")}" %></p>
         <p><%= "Date: #{@course.schedule_date.strftime("%d/%m/%y")}" %></p>
