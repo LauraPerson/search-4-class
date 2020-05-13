@@ -49,7 +49,12 @@
       </div>
     <% end %>
   <% end %>
-  <div class="container-map mx-2 my-5">
+  <div class="container-title mt-5 mb-2">
+    <div class="text-center mt-2 mb-2">
+      <h3>Map of Presential Courses</h3>
+    </div>
+  </div>
+  <div class="container-map mx-2 mb-5 mt-3">
     <div id="map"
        style="width: 100%; height: 600px;"
        data-markers="<%= @markers.to_json %>"
