@@ -11,6 +11,7 @@
     <%= f.input :schedule_date, class: "form-control", html5: true %>
     <%= f.input :duration, class: "form-control", label: "Duration (min)" %>
     <%= f.input :price, class: "form-control", label: "Price ($)" %>
+    <%= f.input :address, class: "form-control" %>
     <% if action_name == "new" || action_name == "create"%>
       <%= f.submit "Add", class: "btn-blue-green" %>
     <% else %>
