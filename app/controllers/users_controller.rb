@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
     def show
       authorize current_user
+      @user = User.find(params[:id])
     end
 
     def edit
