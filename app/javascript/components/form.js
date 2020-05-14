@@ -4,7 +4,8 @@ const DisableButtonForm = () => {
   const input = document.querySelector('.required')
 
   if (input) {
-    const inputs = document.querySelectorAll('.form-control');
+    const inputs = document.querySelectorAll('.form-control.required');
+    console.log(inputs);
 
     const validate = () => {
       let complete = 0;

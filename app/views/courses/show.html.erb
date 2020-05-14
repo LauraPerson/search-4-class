@@ -27,13 +27,14 @@
     </div>
     <div class="show-description">
       <p><%= @course.description %></p>
+      <p><b>Address: </b><%= @course.address %></p>
       <div class="d-flex">
       <p class="mr-3"><b>Date: </b><%= @course.schedule_date.strftime("%d/%m/%y") %></p>
       <p><b>Hour: </b><%= @course.schedule_date.strftime("%H:%M") %></p>
       </div>
     </div>
     <div class="course-show-flex align-items-center">
-      <p class="m-0"><b>Duration: </b><%= @course.duration %>minutes</p>
+      <p class="m-0"><b>Duration: </b><%= @course.duration %> minutes</p>
       <% if current_user != @course.user %>
         <% if @booking %>
           <div class="alert-already-booked">

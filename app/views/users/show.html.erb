@@ -90,6 +90,37 @@
     </div>
   </div>
 
+  <div class="d-flex justify-content-around mx-5 my-5">
+    <%= link_to 'Create a New Course', new_course_path, class: "btn-create-new-course" %>
+    <%= link_to 'Edit your profile', edit_user_registration_path, class: "btn-create-new-course" %>
+  </div>
+  <div class="title-user-courses mx-5 my-5"><h4> Your booked courses: </h4></div>
+
+  <div class="d-flex justify-content-center flex-wrap">
+    <% current_user.bookings.each do |booking| %>
+      <div class="card-course-user-show mt-2 mr-2">
+        <div>
+          <h5 class="card-header mb-3"><%= booking.course.title %></h5>
+        </div>
+        <div>
+          <h6 class="card-subtitle mb-2 text-muted">Teacher <%= "#{booking.course.user.first_name} #{booking.course.user.last_name}" %></h6>
+        </div>
+        <div class="mb-3">
+          <p class="card-text">Description: <%= booking.course.description %></p>
+        </div>
+        <div class="card-align-bottom">
+          <div class="d-flex justify-content-start">
+            <p class="card-text mr-4">Date: <%= booking.course.schedule_date.strftime("%d/%m/%y") %></p>
+            <p class="card-text">Hour: <%= booking.course.schedule_date.strftime("%H:%M") %></p>
+          </div>
+          <div class="d-flex justify-content-center">
+            <%= link_to icon_destroy("trash"), booking_path(booking), method: :delete, class: "btn-font-awesome", data: { confirm: 'Are you sure?' } %>
+        </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
   <div class="title-user-courses mx-5 my-5"><h4> Classes <%= @user.first_name %> is offering: </h4></div>
 
   <div class="d-flex flex-column align-items-center">

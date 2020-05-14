@@ -5,8 +5,24 @@ class CoursesController < ApplicationController
     def index
       if params[:query]
         @courses = policy_scope(Course.search_by_title(params[:query]))
+        @markers = @courses.select{|course| course.online == false}.map do |course|
+            {
+            lat: course.latitude,
+            lng: course.longitude,
+            infoWindow: render_to_string(partial: "info_window", locals: { course: course }),
+            image_url: helpers.asset_url('lamp_marker.png')
+          }
+        end
       else
         @courses = policy_scope(Course.search_by_category(params[:category]))
+        @markers = @courses.select{|course| course.online == false}.map do |course|
+          {
+            lat: course.latitude,
+            lng: course.longitude,
+            infoWindow: render_to_string(partial: "info_window", locals: { course: course }),
+            image_url: helpers.asset_url('lamp_marker.png')
+          }
+        end
       end
     end
     def show
@@ -47,6 +63,6 @@ class CoursesController < ApplicationController
     end
 
     def params_course
-      params.require(:course).permit(:title, :price, :schedule_date, :description, :category_id, :duration)
+      params.require(:course).permit(:title, :price, :schedule_date, :description, :category_id, :duration, :address, :online)
     end
 end
