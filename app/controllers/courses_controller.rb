@@ -11,6 +11,7 @@ class CoursesController < ApplicationController
     end
     def show
       authorize @course
+      @booking = Booking.find_by(course_id: @course.id, user_id: current_user.id)
     end
     def new
       @course = Course.new

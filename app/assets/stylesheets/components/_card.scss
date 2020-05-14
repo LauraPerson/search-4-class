@@ -85,24 +85,15 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
   font-size: 18px;
 }
 
-.course-show-category {
-  background-color: $cream;
-  padding: 10px 40px;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 20px;
-}
 .course-show-title {
   font-weight: bold;
   font-size: 40px;
   text-align: center;
-  padding: 16px
 }
 
 .course-show-card {
   background-color: $cream;
-  padding: 10px;
+  padding: 16px;
   border-radius: 8px;
 }
 
@@ -110,11 +101,6 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px 8px 20px;
-}
-
-.photo-description {
-  padding: 10px 20px 8px 20px;
 }
 
 .photo-showcard-user-name {
@@ -124,7 +110,7 @@ font-size: 20px;
 
 .description-showcard {
 font-weight: bold;
-font-size: 20px;
+font-size: 24px;
 }
 
 .card-course-user-show {

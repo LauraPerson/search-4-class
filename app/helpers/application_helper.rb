@@ -12,4 +12,20 @@ module ApplicationHelper
     html += "></i>"
     html.html_safe
   end
+
+  def profile_navbar
+    if current_user.photo.attached?
+      html = "<div class='avatar_small' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#{cl_image_path current_user.photo.key, crop: :fill})'></div>"
+    else
+      html = "<div class='avatar_small' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#{image_path 'avatar.jpg', crop: :fill})'></div>"
+    end
+    html.html_safe
+  end
+
+  def icon_category(name, size = 2)
+    html = "<i class='fas fa-#{name}' "
+    html += "style='font-size:#{size}em' "
+    html += "></i>"
+    html.html_safe
+  end
 end

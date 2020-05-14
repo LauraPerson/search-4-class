@@ -1,33 +1,45 @@
 <div class="page-container">
-  <div class="container-course-show mb-3">
-    <div class='course-show-category'>
-      <%= @course.category.name %>
-    </div>
-  </div>
 
   <div class="course-show-card">
-    <div class="course-show-title">
-    <p><%= @course.title %></p>
-    </div>
-    <div class="photo-description">
-      <div class="photo-showcard-user-name">
-       <!--  add foto here -->
-       <b><p><%= "#{@course.user.first_name} #{@course.user.last_name}"  %></p></b>
+    <div class="row px-2">
+      <div class="course-show-title col-11">
+        <%= @course.title %>
       </div>
-      <div class="description-showcard">
-        <b><p>Description</p></b>
-      </div>
-      <div class="show-description">
-        <p><%= @course.description %></p>
-        <br>
-        <p><%= "Hour: #{@course.schedule_date.strftime("%H:%M")}" %></p>
-        <p><%= "Date: #{@course.schedule_date.strftime("%d/%m/%y")}" %></p>
+      <div class="category-icon col-1 align-self-center">
+        <%= @course.category.name %>
       </div>
     </div>
-    <div class="course-show-flex">
-      <p><%= "#{@course.duration} minutes" %></p>
+    <div class="description-showcard">
+      <p>The teacher</p>
+    </div>
+    <div class="teacher-description d-flex align-items-center mb-4">
+      <% if @course.user.photo.attached? %>
+        <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path course.user.photo.key, crop: :fill %>')"></div>
+      <% else %>
+        <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "avatar.jpg", crop: :fill %>')"></div>
+      <% end %>
+      <b><p class="my-0 mx-2"><%= "#{@course.user.first_name} #{@course.user.last_name}"  %></p></b>
+    </div>
+    <div class="description-showcard">
+        <p>Description</p>
+    </div>
+    <div class="show-description">
+      <p><%= @course.description %></p>
+      <div class="d-flex">
+      <p class="mr-3"><b>Date: </b><%= @course.schedule_date.strftime("%d/%m/%y") %></p>
+      <p><b>Hour: </b><%= @course.schedule_date.strftime("%H:%M") %></p>
+      </div>
+    </div>
+    <div class="course-show-flex align-items-center">
+      <p class="m-0"><b>Duration: </b><%= @course.duration %>minutes</p>
       <% if current_user != @course.user %>
-        <%= link_to "Book this class", course_bookings_path(@course), method: :post, class: 'btn-book-class' %>
+        <% if @booking %>
+          <div class="alert-already-booked">
+            You already booked this course
+          </div>
+        <% else %>
+          <%= link_to "Book this class", course_bookings_path(@course), method: :post, class: 'btn-book-class' %>
+        <% end %>
       <% end %>
       <% if current_user === @course.user %>
         <div class="buttons-user">
@@ -35,10 +47,11 @@
           <%= link_to icon_destroy("trash", 1.3), course_path(@course), method: :delete, data: {confirm: "Are you sure ?"}, class: 'btn-font-awesome mx-3' %>
         </div>
       <% end %>
-      <p><%= "Price: $ #{@course.price}" %></p>
+      <p class="m-0"><b>Price: </b>$ <%= @course.price %></p>
     </div>
   </div>
   <div class="container-course-show mt-2">
     <%= link_to "Back to your profile", user_path(current_user), class: "btn-outline" %>
   </div>
 </div>
+
