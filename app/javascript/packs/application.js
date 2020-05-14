@@ -6,9 +6,9 @@ require("turbolinks").start()
 import "bootstrap";
 import { DisableButtonForm } from "../components/form";
 
-document.addEventListener("turbolinks:load", () => {
-  DisableButtonForm();
-});
+// document.addEventListener("turbolinks:load", () => {
+//   DisableButtonForm();
+// });
 
 import { initMapbox } from '../plugins/init_mapbox';
 
