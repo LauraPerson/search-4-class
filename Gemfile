@@ -10,6 +10,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '6.0.2.2'
 gem 'redis'
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
@@ -19,6 +20,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'pundit'
+gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

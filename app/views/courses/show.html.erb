@@ -25,6 +25,7 @@
     </div>
     <div class="show-description">
       <p><%= @course.description %></p>
+      <p>Address: <%= @course.address %></p>
       <div class="d-flex">
       <p class="mr-3"><b>Date: </b><%= @course.schedule_date.strftime("%d/%m/%y") %></p>
       <p><b>Hour: </b><%= @course.schedule_date.strftime("%H:%M") %></p>
