@@ -21,4 +21,11 @@ module ApplicationHelper
     end
     html.html_safe
   end
+
+  def icon_category(name, size = 2)
+    html = "<i class='fas fa-#{name}' "
+    html += "style='font-size:#{size}em' "
+    html += "></i>"
+    html.html_safe
+  end
 end

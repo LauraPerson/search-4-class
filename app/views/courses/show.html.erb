@@ -1,13 +1,13 @@
 <div class="page-container">
-  <div class="container-course-show mb-3">
-    <div class='course-show-category'>
-      <%= @course.category.name %>
-    </div>
-  </div>
 
   <div class="course-show-card">
-    <div class="course-show-title">
-    <p><%= @course.title %></p>
+    <div class="row px-2">
+      <div class="course-show-title col-11">
+        <%= @course.title %>
+      </div>
+      <div class="category-icon col-1 align-self-center">
+        <%= @course.category.name %>
+      </div>
     </div>
     <div class="description-showcard">
       <p>The teacher</p>
