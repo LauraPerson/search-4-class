@@ -14,7 +14,7 @@
     </div>
     <div class="teacher-description d-flex align-items-center mb-4">
       <% if @course.user.photo.attached? %>
-        <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path course.user.photo.key, crop: :fill %>')"></div>
+        <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @course.user.photo.key, crop: :fill %>')"></div>
       <% else %>
         <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "avatar.jpg", crop: :fill %>')"></div>
       <% end %>
