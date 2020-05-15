@@ -1,7 +1,7 @@
 .banner-home {
   background-size: cover;
   background-position: center;
-  height: 400px;
+  height: 80vh;
   padding: 20px;
 }
 
@@ -9,7 +9,7 @@
   color: white;
   font-size: 48px;
   text-shadow: 2px 2px $gray;
-  margin-top: 160px;
+  margin-top: 40vh;
 }
 
 .banner-description {
@@ -17,5 +17,5 @@
   font-size: 20px;
   font-weight: lighter;
   text-shadow: 2px 2px $gray;
-  margin-top: 30px;
+  margin-top: 3vh;
 }
