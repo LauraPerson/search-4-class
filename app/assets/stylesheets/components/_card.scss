@@ -126,3 +126,16 @@ font-size: 24px;
 .card-align-bottom {
   margin-top: auto;
 }
+
+.card-cart {
+  margin: auto;
+  width: 600px;
+  height: 200px;
+  padding: 5px;
+  background-color: $cream;
+  border-radius: 10px;
+  h5 {
+    font-weight: bold;
+  }
+}
+

@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container mb-4">
   <div class="home-title my-4">
-    <h1>Find a course on Search 4 class </h1>
+    <h1>Find a class on Search 4 class </h1>
   </div>
 
   <div class="home-search-bar my-2">
     <%= form_tag courses_path, method: :get do %>
-      <%= text_field_tag :query, "", placeholder: "Enter a course name" %>
+      <%= text_field_tag :query, "", placeholder: "Enter a class name" %>
       <button class="btn-blue-green">Submit</button>
     <% end %>
   </div>
