@@ -17,9 +17,10 @@
 
   <div class="home-search-bar my-2">
     <%= form_tag courses_path, method: :get do %>
-      <%= text_field_tag :query, "", placeholder: "Enter a class name" %>
+      <%= text_field_tag :query, "", placeholder: "Enter a class name", required: true %>
       <button class="btn-blue-green">Submit</button>
     <% end %>
+    <%= link_to "See all the classes", courses_path, class: "btn-outline-black ml-2" %>
   </div>
 
     <div class="row">

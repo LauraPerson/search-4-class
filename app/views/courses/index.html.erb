@@ -1,7 +1,17 @@
 <div class="container">
+<% if @search_name %>
   <div class="result-title">
-    <h1>Courses list</h1>
+    <h1>List of all the classes with "<%= @search_name %>"</h1>
   </div>
+<% elsif @category_name %>
+  <div class="result-title">
+    <h1>List of all the classes in : <b><%= @category_name %></b></h1>
+  </div>
+<% else %>
+  <div class="result-title">
+    <h1>List of all the classes</h1>
+  </div>
+<% end %>
 
   <% @courses.each do |course| %>
     <%= link_to course_path(course), {class: "without-text-decoration"} do%>

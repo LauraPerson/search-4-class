@@ -128,6 +128,24 @@ $box-shadow-btn: 0 1.5px #999;
   }
 }
 
+.btn-outline-black {
+  border: 1px $blue-green solid ;
+  padding: 4px 8px;
+  background-color: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;;
+  color: $gray;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  &:hover {
+    border-color: $blue-green-dark;
+    text-decoration: none;
+    color: black;
+  }
+}
+
 .btn-book-class {
   text-decoration: none;
   border: none;
