@@ -3,10 +3,20 @@
   background: white;
 }
 
+.navbar-style {
+  background-color: rgb(243, 243, 243);
+  border-bottom: 0.7px solid rgb(230, 230, 230)
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-transparent {
+  background-color: transparent;
+  border: none;
 }
