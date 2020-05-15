@@ -111,6 +111,23 @@ $box-shadow-btn: 0 1.5px #999;
   }
 }
 
+.btn-sign-outline-white {
+  border: 1px $blue-green solid ;
+  padding: 4px 8px;
+  background-color: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;;
+  color: white;
+  border-radius: 10px;
+  &:hover {
+    border-color: $blue-green-light;
+    text-decoration: none;
+    color:white;
+    box-shadow: $box-shadow-btn;
+  }
+}
+
 .btn-book-class {
   text-decoration: none;
   border: none;
