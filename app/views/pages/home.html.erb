@@ -1,3 +1,4 @@
+
 <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path('Search4ClassBanner.jpg')%>')">
   <div class="banner-title">
     Want to learn ? Find a Class.
@@ -13,7 +14,7 @@
 
   <div class="home-search-bar my-2">
     <%= form_tag courses_path, method: :get do %>
-      <%= text_field_tag :query, "", placeholder: "Enter a course name" %>
+      <%= text_field_tag :query, "", placeholder: "Enter a class name" %>
       <button class="btn-blue-green">Submit</button>
     <% end %>
   </div>
