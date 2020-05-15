@@ -11,7 +11,7 @@
             <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "avatar", crop: :fill %>')"></div>
           <% end %>
         </div>
-        <div class="card-user-info mx-5 my-5">
+        <div class="card-user-info mx-5 my-2">
           <div class="user-name"><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></div>
           <h5>Classes booked : <%= current_user.bookings.length %></h5>
           <h5>Classes created : <%= current_user.courses.length %></h5>

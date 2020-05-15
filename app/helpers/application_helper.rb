@@ -28,4 +28,17 @@ module ApplicationHelper
     html += "></i>"
     html.html_safe
   end
+
+   def icon_cart(name, size = 1.5)
+    html = "<i class='fas fa-#{name}' "
+    html += "style='font-size:#{size}em' "
+    html += "></i>"
+    html.html_safe
+  end
 end
+
+
+
+
+
+

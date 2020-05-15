@@ -10,3 +10,11 @@
   height: 70px;
   width: 70px;
 }
+
+.cart-icon {
+  color: $blue-green;
+  &:hover {
+  color: $blue-green-dark;
+  text-decoration: none;
+  }
+}
