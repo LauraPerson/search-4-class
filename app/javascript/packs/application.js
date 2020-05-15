@@ -5,6 +5,7 @@ require("turbolinks").start()
 
 import "bootstrap";
 import { DisableButtonForm } from "../components/form";
+import { transparentScroll } from "../components/navbar";
 
 // document.addEventListener("turbolinks:load", () => {
 //   DisableButtonForm();
@@ -15,6 +16,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 document.addEventListener('turbolinks:load', () => {
   DisableButtonForm();
   initMapbox();
+  transparentScroll();
 })
 
 // Uncomment to copy all static images under ../images to the output folder and reference
