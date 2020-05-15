@@ -13,14 +13,15 @@
       <p>The teacher</p>
     </div>
     <div class="teacher-description d-flex align-items-center mb-4">
-      <%= link_to user_path(@course.user), {class: "without-text-decoration"} do %>
-        <% if @course.user.photo.attached? %>
-            <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @course.user.photo.key, crop: :fill %>')"></div>
-        <% else %>
-            <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "avatar.jpg", crop: :fill %>')"></div>
-        <% end %>
+      <% if @course.user.photo.attached? %>
+          <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @course.user.photo.key, crop: :fill %>')"></div>
+      <% else %>
+          <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "avatar.jpg", crop: :fill %>')"></div>
       <% end %>
       <b><p class="my-0 mx-2"><%= "#{@course.user.first_name} #{@course.user.last_name}"  %></p></b>
+      <div>
+      <%= link_to "Teacher page", user_path(@course.user), {class: "btn-outline p-1 ml-1", style:"font-size: 10px;"} %>
+    </div>
     </div>
     <div class="description-showcard">
         <p>Description</p>

@@ -2,6 +2,7 @@
 
 <% if @user == current_user %>
 
+  <% if current_user.bookings.length > 0 %>
     <div class="row">
       <div class="user-info col-6">
         <div class="card-photo-user ml-2">
@@ -11,35 +12,59 @@
             <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "avatar", crop: :fill %>')"></div>
           <% end %>
         </div>
-        <div class="card-user-info mx-5 my-5">
-          <div class="user-name"><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></div>
-          <h5>Classes booked : <%= current_user.bookings.length %></h5>
-          <h5>Classes created : <%= current_user.courses.length %></h5>
+        <div class="card-user-info mx-5 my-3">
+          <div class="card-user-name mb-4 d-flex justify-content-around">
+            <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %>
+            <%= link_to icon_edit("edit"), edit_user_registration_path, class: "btn-font-awesome"%>
+          </div>
+          Classes booked : <%= current_user.bookings.length %>
+          Classes created : <%= current_user.courses.length %>
         </div>
       </div>
       <div class="card-cart d-flex flex-column col-3">
-        <div class="cart-title flex-grow-2"> Your cart </div>
-        <div class="row flex-grow-1">
+        <div class="cart-title"> Your cart </div>
+        <div class="row">
           <% current_user.bookings.each do |booking| %>
-            <div class="col-8 offset-1"> <%= booking.course.title %></div>
-            <div class="col-1 offset-1 m-0"> <%= booking.course.price %></div>
+            <div class="col-7 offset-1"> <%= booking.course.title %></div>
+            <div class="col-3 offset-1 m-0"> <%= booking.course.price %>$</div>
           <% end %>
         </div>
-          <div class="row flex-grow-3">
-            <div class="col-8 offset-1"> Total : </div>
-            <% current_user.bookings.each do |booking| %>
+          <div class="row card-cart-total">
+            <div class="col-7 offset-1"><b> Total : </div>
             <% sum = 0 %>
-            <div class="col-1 offset-1 m-0"> <%= sum + booking.course.price %></div>
-           <% end %>
+            <div class="col-3 offset-1 m-0"> 
+              <% current_user.bookings.each do |booking| %>
+                <% sum += booking.course.price %>
+              <% end %>
+              <%= sum %>$
+           </div></b>
           </div>
         </div>
       </div>
     </div>
+  <% else %>
+    <div class="user-info">
+      <div class="card-photo-user ml-2">
+      <% if current_user.photo.attached? %>
+        <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path current_user.photo.key, crop: :fill %>')"></div>
+      <% else %>
+        <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "avatar", crop: :fill %>')"></div>
+      <% end %>
+      </div>
+      <div class="card-user-info mx-5 my-3">
+        <div class="card-user-name mb-4 d-flex justify-content-around">
+          <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %>
+          <%= link_to icon_edit("edit"), edit_user_registration_path, class: "ml-4 btn-font-awesome"%>
+        </div>
+        <p class="m-0">Classes booked : <%= current_user.bookings.length %></p>
+        <p class="m-0">Classes created : <%= current_user.courses.length %></p>
+      </div>
+    </div>
+  <% end %>
 
 
     <div class="d-flex justify-content-around mx-5 my-5">
       <%= link_to 'Create a New Class', new_course_path, class: "btn-create-new-course" %>
-      <%= link_to 'Edit your profile', edit_user_registration_path, class: "btn-create-new-course" %>
   </div>
     </div>
     <div class="title-user-courses mx-5 my-5"><h4> Your booked classes: </h4></div>
