@@ -5,6 +5,7 @@ require("turbolinks").start()
 
 import "bootstrap";
 import { DisableButtonForm } from "../components/form";
+import { transparentScroll } from "../components/navbar";
 
 // document.addEventListener("turbolinks:load", () => {
 //   DisableButtonForm();
@@ -14,10 +15,12 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   DisableButtonForm();
+  transparentScroll();
+  
   if (document.getElementById('map')) {
     initMapbox();
   }
-
+  
   const a = document.getElementById('course_online');
   if (a) {
     a.addEventListener('change', (e) => {

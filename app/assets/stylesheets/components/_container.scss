@@ -4,8 +4,11 @@
 }
 
 .user-info {
+  display: flex;
+  align-items: center;
   margin: auto;
   width: 600px;
+  height: 200;
   padding: 5px;
   background-color: $cream;
   border-radius: 10px;
@@ -14,10 +17,9 @@
   }
 }
 
-.container-course-show {
-  display: flex;
-  justify-content: flex-end;
-}
+// .container-course-show {
+//   justify-content: flex-end;
+// }
 
 .hidden {
   display: none;

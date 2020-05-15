@@ -1,0 +1,21 @@
+.banner-home {
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  padding: 20px;
+}
+
+.banner-title {
+  color: white;
+  font-size: 48px;
+  text-shadow: 2px 2px $gray;
+  margin-top: 160px;
+}
+
+.banner-description {
+  color: white;
+  font-size: 20px;
+  font-weight: lighter;
+  text-shadow: 2px 2px $gray;
+  margin-top: 30px;
+}
