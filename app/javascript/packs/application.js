@@ -15,8 +15,19 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   DisableButtonForm();
-  initMapbox();
   transparentScroll();
+  
+  if (document.getElementById('map')) {
+    initMapbox();
+  }
+  
+  const a = document.getElementById('course_online');
+  if (a) {
+    a.addEventListener('change', (e) => {
+      document.getElementById('address-container').classList.toggle('hidden');
+
+    })
+  }
 })
 
 // Uncomment to copy all static images under ../images to the output folder and reference
