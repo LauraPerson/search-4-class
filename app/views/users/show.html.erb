@@ -13,12 +13,14 @@
           <% end %>
         </div>
         <div class="card-user-info mx-5 my-3">
-          <div class="card-user-name mb-4 d-flex justify-content-around">
-            <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %>
+          <div class="card-user-name mb-4 d-flex">
+            <div class="mr-4">
+              <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %>
+            </div>
             <%= link_to icon_edit("edit"), edit_user_registration_path, class: "btn-font-awesome"%>
           </div>
-          Classes booked : <%= current_user.bookings.length %>
-          Classes created : <%= current_user.courses.length %>
+          <p>Classes booked : <%= current_user.bookings.length %></p>
+          <p>Classes created : <%= current_user.courses.length %></p>
         </div>
       </div>
       <div class="card-cart d-flex flex-column col-3">
@@ -29,17 +31,17 @@
             <div class="col-3 offset-1 m-0"> <%= booking.course.price %>$</div>
           <% end %>
         </div>
-          <div class="row card-cart-total">
-            <div class="col-7 offset-1"><b> Total : </div>
-            <% sum = 0 %>
-            <div class="col-3 offset-1 m-0"> 
-              <% current_user.bookings.each do |booking| %>
-                <% sum += booking.course.price %>
-              <% end %>
-              <%= sum %>$
-           </div></b>
-          </div>
+        <div class="row card-cart-total">
+          <div class="col-7 offset-1"><b> Total : </div>
+          <% sum = 0 %>
+          <div class="col-3 offset-1 m-0"> 
+            <% current_user.bookings.each do |booking| %>
+              <% sum += booking.course.price %>
+            <% end %>
+            <%= sum %>$
+          </div></b>
         </div>
+        <div class="btn-blue-green mt-2"> Pay </div>
       </div>
     </div>
   <% else %>
