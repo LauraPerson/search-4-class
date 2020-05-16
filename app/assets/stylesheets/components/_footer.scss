@@ -1,0 +1,29 @@
+.footer-copyright a {
+  text-decoration: none;
+  color: #B8B8B8;
+  font-weight: bold;
+}
+
+.footer-copyright a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: $dark-gray;
+}
+
+.social-icon {
+  font-size: 36px;
+  color: #C0C0C0;
+  margin: 10px 10px;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.footer-copyright {
+  font-size: 14px;
+}
+
+.contact-email {
+  font-size: 18px;
+}

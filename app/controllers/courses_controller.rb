@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
 
     def index
       if params[:query]
+        @search_name = params[:query]
         @courses = policy_scope(Course.search_by_title(params[:query]))
         @markers = @courses.select{|course| course.online == false}.map do |course|
             {
@@ -13,7 +14,8 @@ class CoursesController < ApplicationController
             image_url: helpers.asset_url('lamp_marker.png')
           }
         end
-      else
+      elsif params[:category]
+        @category_name = Category.find(params[:category].to_i).name
         @courses = policy_scope(Course.search_by_category(params[:category]))
         @markers = @courses.select{|course| course.online == false}.map do |course|
           {
@@ -23,6 +25,8 @@ class CoursesController < ApplicationController
             image_url: helpers.asset_url('lamp_marker.png')
           }
         end
+      else
+        @courses = policy_scope(Course)
       end
     end
     def show

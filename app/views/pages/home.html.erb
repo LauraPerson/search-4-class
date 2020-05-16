@@ -1,12 +1,14 @@
-
 <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path('Search4ClassBanner.jpg')%>')">
   <div class="banner-title">
     Want to learn ? Find a Class.
   </div>
   <div class="banner-description">
-    Find a class responding your expectations
+    Find a class which respond to your expectatives
   </div>
 </div>
+<% if notice %>
+  <p class="notice py-2"><%= notice %></p>
+<% end %>
 <div class="container mb-4">
   <div class="home-title my-4">
     Search for a class
@@ -14,9 +16,10 @@
 
   <div class="home-search-bar my-2">
     <%= form_tag courses_path, method: :get do %>
-      <%= text_field_tag :query, "", placeholder: "Enter a class name" %>
+      <%= text_field_tag :query, "", placeholder: "Enter a class name", required: true %>
       <button class="btn-blue-green">Submit</button>
     <% end %>
+    <%= link_to "See all the classes", courses_path, class: "btn-outline-black ml-2" %>
   </div>
 
     <div class="row">

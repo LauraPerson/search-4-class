@@ -13,10 +13,12 @@
     <%= f.input :price, class: "form-control", label: "Price ($)" %>
     <%= f.label "Online course" %>
     <%= f.check_box :online %>
-    <%= f.input :address, required: false, class: "form-control" %>
+    <div id="address-container" class="<%= @course.persisted? && @course.online? ? 'hidden' : '' %>">
+      <%= f.input :address, required: false, class: "form-control" %>
+    </div>
     <% if action_name == "new" || action_name == "create"%>
-      <%= f.submit "Add", class: "btn-blue-green" %>
+      <div><%= f.submit "Add", class: "btn-blue-green" %></div>
     <% else %>
-      <%= f.submit "Edit", class: "btn-blue-green" %>
+      <div><%= f.submit "Edit", class: "btn-blue-green" %></div>
     <% end %>
   <% end %>

@@ -7,7 +7,7 @@ const transparentScroll = () => {
     navbar.classList.add("fixed-top");
     navbar.classList.add("navbar-transparent");
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 320) {
+      if (window.scrollY > 420) {
         button.classList.remove("btn-sign-outline-white");
         navbar.classList.remove("navbar-transparent");
       } else {
