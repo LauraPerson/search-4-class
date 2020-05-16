@@ -41,7 +41,20 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
 .card-results-courses {
   color: black;
   display: flex;
-  height: 240px;
+  height: 250px;
+  padding: 20px;
+  box-shadow: $box-shadow;
+  &:hover {
+    text-decoration: none !important;
+    box-shadow: $box-shadow-hover;
+  }
+}
+
+.card-results-courses-online {
+  color: black;
+  background-color: $light-green;
+  display: flex;
+  height: 250px;
   padding: 20px;
   box-shadow: $box-shadow;
   &:hover {
@@ -71,12 +84,12 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
 
 .result-course-description {
   font-size: 18px;
-  border : solid 1px $medium-gray;
+  border : solid 1px gray;
   border-radius: 4px;
   font-style: italic;
-  color: $medium-gray;
+  color: gray;
   padding: 10px;
-  height: 100px;
+  height: 60px;
 }
 
 .card-results-date-category {
@@ -174,4 +187,10 @@ font-size: 24px;
   border-radius: 8px;
   background-color: rgba(250,250,250,0.5);
   box-shadow: 2px 2px rgba(88,180,174,0.5);
+}
+
+.courses-list {
+  justify-content: center;
+  padding: 5px 20px 5px 20px;
+  width: 900px;
 }
