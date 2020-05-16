@@ -15,12 +15,12 @@
 
 .container-map {
   height: 100vh;
-  width: 700px;
 }
 
 .container-map-title {
+  display: inline-block;
   height: 100vh;
-  width: 700px;
+  width: 40%;
   position: sticky;
   top: 0;
 }
