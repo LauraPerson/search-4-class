@@ -65,6 +65,10 @@
           <div class="alert-already-booked">
             You already booked this course
           </div>
+        <% elsif @course.bookings.length == @course.max_bookings %>
+          <div class="alert-already-booked">
+            There is no more place in this class
+          </div>
         <% else %>
           <%= link_to "Book this class", course_bookings_path(@course), method: :post, class: 'btn-book-class' %>
         <% end %>
