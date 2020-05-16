@@ -14,13 +14,14 @@
 }
 
 .container-map {
-  height: 100vh;
-  width: 700px;
+  height: 80vh;
 }
 
 .container-map-title {
-  height: 100vh;
-  width: 700px;
+  text-shadow: 0.5px 0.5px $blue-green;
+  display: inline-block;
+  height: 120vh;
+  width: 40%;
   position: sticky;
   top: 0;
 }

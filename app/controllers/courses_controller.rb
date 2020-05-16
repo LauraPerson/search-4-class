@@ -27,6 +27,14 @@ class CoursesController < ApplicationController
         end
       else
         @courses = policy_scope(Course)
+        @markers = @courses.select{|course| course.online == false}.map do |course|
+          {
+          lat: course.latitude,
+          lng: course.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { course: course }),
+          image_url: helpers.asset_url('lamp_marker.png')
+        }
+        end
       end
     end
     def show

@@ -41,8 +41,8 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
 .card-results-courses {
   color: black;
   display: flex;
-  height: 250px;
   padding: 20px;
+  border-radius: 8px;
   box-shadow: $box-shadow;
   &:hover {
     text-decoration: none !important;
@@ -54,7 +54,6 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
   color: black;
   background-color: $light-green;
   display: flex;
-  height: 250px;
   padding: 20px;
   box-shadow: $box-shadow;
   &:hover {
@@ -89,7 +88,6 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
   font-style: italic;
   color: gray;
   padding: 10px;
-  height: 60px;
 }
 
 .card-results-date-category {
@@ -191,5 +189,6 @@ font-size: 24px;
 .courses-list {
   justify-content: center;
   padding: 5px 20px 5px 20px;
-  width: 900px;
+  width: 60%;
+  display: inline-block;
 }
