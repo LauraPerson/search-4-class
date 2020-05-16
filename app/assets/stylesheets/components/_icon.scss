@@ -9,3 +9,11 @@
   color: $blue-green;
   margin-left: auto;
 }
+
+.cart-icon {
+  color: $blue-green;
+  &:hover {
+  color: $blue-green-dark;
+  text-decoration: none;
+  }
+}

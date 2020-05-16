@@ -34,7 +34,7 @@
         <div class="row card-cart-total">
           <div class="col-7 offset-1"><b> Total : </div>
           <% sum = 0 %>
-          <div class="col-3 offset-1 m-0"> 
+          <div class="col-3 offset-1 m-0">
             <% current_user.bookings.each do |booking| %>
               <% sum += booking.course.price %>
             <% end %>
