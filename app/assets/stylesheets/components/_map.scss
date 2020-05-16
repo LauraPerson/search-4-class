@@ -6,3 +6,21 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+.container-map-card {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-map {
+  height: 100vh;
+  width: 700px;
+}
+
+.container-map-title {
+  height: 100vh;
+  width: 700px;
+  position: sticky;
+  top: 0;
+}
