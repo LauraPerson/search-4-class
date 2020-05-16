@@ -30,12 +30,15 @@
           <div class="result-course-name">
             <h1><%= course.title %></h1>
           </div>
-          <div class="result-course-price-category d-flex">
-            <div class="result-course-duration">
+          <div class="result-course-price-category d-flex align-items-center">
+            <div class="result-course">
               <p> <%= course.duration %> min </p>
             </div>
-            <div class="result-course-price ml-5">
+            <div class="result-course ml-5">
               <p> <%= course.price %> $ </p>
+            </div>
+            <div class="result-course ml-5">
+              <p><%= course.max_bookings - course.bookings.length %> slots left</p>
             </div>
           </div>
           <div class="result-course-description">

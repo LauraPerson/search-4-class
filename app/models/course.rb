@@ -2,6 +2,7 @@ class Course < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   belongs_to :category
+  validates :max_bookings, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :title, presence: true
   validates :schedule_date, presence: true
   validates :duration, presence: true, numericality: { only_integer: true, greater_than: 0 }
