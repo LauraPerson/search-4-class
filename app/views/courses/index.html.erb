@@ -17,7 +17,7 @@
 
   <% @courses.each do |course| %>
     <%= link_to course_path(course), {class: "without-text-decoration"} do%>
-      <div class="<%= course.online? ? 'card-results-courses-online' : 'card-results-courses' %>">
+      <div class="<%= course.online? ? 'card-results-courses-online mb-2' : 'card-results-courses mb-2' %>">
         <div class="card-results-prof">
           <% if course.user.photo.attached? %>
             <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path course.user.photo.key, crop: :fill %>')"></div>
@@ -46,7 +46,7 @@
            <div>
             <% if course.online == false %>
               <div class="d-flex align-items-center mb-2">
-                <p class="m-0 ml-2"><b>Presential Course | Address: <%= course.address %></b></p>
+                <p class="m-0 ml-2"><b>Presential Class | Address: <%= course.address %></b></p>
               </div>
             <% else %>
               <div class="d-flex align-items-center mb-2">
@@ -86,7 +86,7 @@
     <% if @markers.any? %>
       <div class="container-title mb-2">
         <div class="text-center mt-2 mb-2">
-          <h3>Map of Presential Courses</h3>
+          <h3>Map of Presential Classes</h3>
         </div>
       </div>
       <div class="container-map mx-2 mb-5 mt-3">
