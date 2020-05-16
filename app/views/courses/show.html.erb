@@ -54,7 +54,8 @@
           <p><b>Hour: </b><%= @course.schedule_date.strftime("%H:%M") %></p>
         </div>
         <p><b>Duration: </b><%= @course.duration %> minutes</p>
-        <p class="m-0"><b>Price: </b>$ <%= @course.price %></p>
+        <p><b>Price: </b>$ <%= @course.price %></p>
+        <p class="m-0"><b>Remaining places: </b> <%= @course.max_bookings - @course.bookings.length %></p>
       </div>
     </div>
     
@@ -64,6 +65,10 @@
         <% if @booking %>
           <div class="alert-already-booked">
             You already booked this course
+          </div>
+        <% elsif @course.bookings.length == @course.max_bookings %>
+          <div class="alert-already-booked">
+            There is no more place in this class
           </div>
         <% else %>
           <%= link_to "Book this class", course_bookings_path(@course), method: :post, class: 'btn-book-class' %>
