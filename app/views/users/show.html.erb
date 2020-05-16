@@ -94,6 +94,10 @@
               </div>
               </div>
             </div>
+            <div class="d-flex justify-content-center">
+              <%= link_to icon_destroy("trash"), booking_path(booking), method: :delete, class: "btn-font-awesome", data: { confirm: 'Are you sure?' } %>
+            </div>
+
           </div>
         <% end %>
       <% end %>
@@ -114,7 +118,7 @@
             <div class="d-flex justify-content-around">
               <%= link_to icon_edit("edit"), edit_course_path(course), class: "btn-font-awesome" %>
               <%= link_to 'Show Class', course_path(course), class: "btn-blue-green" %>
-              <%= link_to icon_destroy("trash"), course_path(course), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-font-awesome" %>
+              <%= link_to icon_destroy("trash"), course_path(course), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn-font-awesome" %>
             </div>
           </div>
         </div>
