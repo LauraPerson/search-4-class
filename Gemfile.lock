@@ -263,7 +263,7 @@ DEPENDENCIES
   turbolinks_render
   uglifier
   web-console (>= 3.3.0)
-  webpacker
+  webpacker (~> 5.x)
 
 RUBY VERSION
    ruby 2.6.5p114
