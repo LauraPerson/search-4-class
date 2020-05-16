@@ -27,7 +27,7 @@
         <div class="cart-title"> Your cart </div>
         <div class="row">
           <% current_user.bookings.each do |booking| %>
-            <div class="col-7 offset-1"> <%= booking.course.title %></div>
+            <div class="col-7 offset-1"> <%= booking.course.title.titleize %></div>
             <div class="col-3 offset-1 m-0"> <%= booking.course.price %>$</div>
           <% end %>
         </div>
@@ -75,18 +75,18 @@
       <% current_user.bookings.each do |booking| %>
         <div class="card-course-user-show mt-2 mr-2">
           <div>
-            <h5 class="card-header mb-3"><%= booking.course.title %></h5>
+            <h5 class="card-header mb-3"><strong><%= booking.course.title.titleize %></strong></h5>
           </div>
           <div>
             <h6 class="card-subtitle mb-2 text-muted">Teacher <%= "#{booking.course.user.first_name} #{booking.course.user.last_name}" %></h6>
           </div>
           <div class="mb-3">
-            <p class="card-text">Description: <%= booking.course.description %></p>
+            <p class="card-text"><strong>Description: </strong><%= booking.course.description %></p>
           </div>
           <div class="card-align-bottom">
             <div class="d-flex justify-content-start">
-              <p class="card-text mr-4">Date: <%= booking.course.schedule_date.strftime("%d/%m/%y") %></p>
-              <p class="card-text">Hour: <%= booking.course.schedule_date.strftime("%H:%M") %></p>
+              <p class="card-text mr-4"><strong>Date: </strong><%= booking.course.schedule_date.strftime("%d/%m/%y") %></p>
+              <p class="card-text"><strong>Hour: </strong><%= booking.course.schedule_date.strftime("%H:%M") %></p>
             </div>
             <div class="d-flex justify-content-center">
               <%= link_to icon_destroy("trash"), booking_path(booking), method: :delete, class: "btn-font-awesome", data: { confirm: 'Are you sure?' } %>
@@ -102,11 +102,11 @@
       <% current_user.courses.each do |course| %>
         <div class="card-course-user-show mt-2" style="width: 50rem;">
           <div class="card-body">
-            <h5 class="card-header mb-3"><%= course.title %> </h5>
-            <p class="card-text">Description: <%= course.description %></p>
+            <h5 class="card-header mb-3"><strong><%= course.title.titleize %> </strong></h5>
+            <p class="card-text"><strong>Description: </strong><%= course.description %></p>
             <div class="d-flex justify-content-start">
-              <p class="card-text mr-4">Date: <%= course.schedule_date.strftime("%d/%m/%y") %></p>
-              <p class="card-text">Hour: <%= course.schedule_date.strftime("%H:%M") %></p>
+              <p class="card-text mr-4"><strong>Date: </strong><%= course.schedule_date.strftime("%d/%m/%y") %></p>
+              <p class="card-text"><strong>Hour: </strong><%= course.schedule_date.strftime("%H:%M") %></p>
             </div>
             <div class="d-flex justify-content-around">
               <%= link_to icon_edit("edit"), edit_course_path(course), class: "btn-font-awesome" %>
