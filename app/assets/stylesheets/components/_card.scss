@@ -1,8 +1,12 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
 
-.without-text-decoration:hover {
+.without-text-decoration{
+  color: black;
+  &:hover {
   text-decoration: none;
+  color: black;
+  }
 }
 
 .card-category {
@@ -61,11 +65,7 @@ $box-shadow-hover: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
   font-size: 40px;
 }
 
-.result-course-price {
-  font-size: 20px;
-}
-
-.result-course-duration {
+.result-course {
   font-size: 20px;
 }
 
@@ -134,6 +134,9 @@ font-size: 24px;
   border: $medium-gray 1px solid;
   padding: 20px;
   background-color: white;
+   &:hover {
+    box-shadow: $box-shadow-hover;
+  }
 }
 
 .card-align-bottom {
