@@ -71,9 +71,9 @@
     </div>
     <div class="title-user-courses mx-5 my-5"><h4> Your booked classes: </h4></div>
 
-      <% current_user.bookings.each do |booking| %>
-        <%= link_to courses_path(booking.course_id), {class: "without-text-decoration"} do%>
-          <div class="d-flex justify-content-center flex-wrap">
+      <div class="d-flex justify-content-center flex-wrap">
+        <% current_user.bookings.each do |booking| %>
+          <%= link_to courses_path(booking.course_id), {class: "without-text-decoration"} do%>
             <div class="card-course-user-show mt-2 mr-2">
               <div>
                 <h5 class="card-header mb-3"><%= booking.course.title %></h5>
@@ -90,17 +90,13 @@
                   <p class="card-text">Hour: <%= booking.course.schedule_date.strftime("%H:%M") %></p>
                 </div>
                 <div class="d-flex justify-content-center">
-                  <%= link_to icon_destroy("trash"), booking_path(booking), method: :delete, class: "btn-font-awesome", data: { confirm: 'Are you sure?' } %>
-              </div>
+                  <%= link_to icon_destroy("trash"), booking_path(booking), method: :delete, remote: true, class: "btn-font-awesome", data: { confirm: 'Are you sure?' } %>
+                </div>
               </div>
             </div>
-            <div class="d-flex justify-content-center">
-              <%= link_to icon_destroy("trash"), booking_path(booking), method: :delete, class: "btn-font-awesome", data: { confirm: 'Are you sure?' } %>
-            </div>
-
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+       </div>
 
      <div class="title-user-courses mx-5 my-5"><h4> Classes you are offering: </h4></div>
 
@@ -118,7 +114,7 @@
             <div class="d-flex justify-content-around">
               <%= link_to icon_edit("edit"), edit_course_path(course), class: "btn-font-awesome" %>
               <%= link_to 'Show Class', course_path(course), class: "btn-blue-green" %>
-              <%= link_to icon_destroy("trash"), course_path(course), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn-font-awesome" %>
+              <%= link_to icon_destroy("trash"), course_path(course), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, remote: true, class: "btn-font-awesome" %>
             </div>
           </div>
         </div>

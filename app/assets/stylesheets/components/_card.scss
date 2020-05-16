@@ -144,10 +144,9 @@ font-size: 24px;
 }
 
 .card-cart {
-  margin: auto;
-  width: 600px;
+  background-color: white;
   padding: 5px;
-  background-color: $cream;
+  box-shadow: 1px 1px $cream;
   border-radius: 10px;
   h5 {
     font-weight: bold;
